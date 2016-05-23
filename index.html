@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <meta name="keywords" content="毕业顶岗实习信息平台">
+    <title>毕业顶岗实习信息平台</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="bookmark" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="inner-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text">
+                    <img src="img/logo.png" alt="上海电子信息职业技术学院"><!--logo-->
+                    <h1><strong>毕业顶岗实习信息平台</strong></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 form-box">
+                    <div class="form-bottom">
+                      <!-- 登录表单框 -->
+	                    <form role="form" action="login/loginchk.php" method="post" class="" id="loginform" onsubmit="return chk(this)">
+	                    	<div class="form-group">
+	                        	<input type="text" name="username" placeholder="全局管理员初始账号111300" class="form-control" id="form-username" onkeyup="value=value.replace(/[\W]/g,'')" required>
+	                        </div>
+	                        <div class="form-group">
+	                        	<input type="password" name="password" placeholder="全局管理员密码12345678" class="form-control" id="form-password"  required>
+	                        </div>
+	                        <input name="login" type="submit" class="form-control btn btn-info" value="登录" id="loginbtn">
+	                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 全屏背景 -->
+    <div class="backstretch" style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 100%; width: 100%; z-index: -999999; position: fixed;">
+        <img src="img/1.jpg" style="position: absolute; margin: 0px; padding: 0px; border: none; width: 100%; height: 100%; max-height: none; max-width: none; z-index: -999999; left: 0px; ">
+    </div>
+    <!-- 引入Javascript -->
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    function chk(x){
+        if (x.username.value.length<=0) {
+            alert("请输入您的学/工号");
+            x.username.focus();
+            return false;
+        }else if(!x.username.value.match(/^[a-zA-Z0-9]+$/)){
+            alert("学/工号含有非法字符");
+            x.username.focus();
+            return false;
+        }
+        if (x.password.value.length<=0) {
+            alert("请输入您的密码");
+            x.password.focus();
+            return false;
+        };
+    }
+    </script>
+</body>
+</html>
